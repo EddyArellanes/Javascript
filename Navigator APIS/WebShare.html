@@ -1,0 +1,58 @@
+<!--This Script was learned in:
+Código Facilito
+https://www.youtube.com/watch?v=Y3blXPYcd7Y
+
+
+Web Share API is a new Navigator Function for use the Native Share System of Android and iOS, you can press the button and share in a multiples ways your Page.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<title>Web Share API</title>
+	<style type="text/css">
+		.fab{
+			position: fixed;	
+			right:1em;
+			bottom:1em;							
+			width:80px;
+			height: 80px;
+			display: flex; /*For align child items*/
+			align-items: center; /*Center Vertical*/
+			justify-content: center; /*Center Horizontal*/			
+			border-radius: 50%;
+			font-size: 40px;			
+			background-color:#283593;
+			color: white;
+			text-decoration: none;					
+		}
+		.fab:hover{
+			background-color:#1a237e;
+		}
+	</style>
+</head>
+<body>
+	<a href="http://eddyarellanes.github.io" class="sharing fab"><i class="material-icons">share</i></a>
+	<script type="text/javascript">
+		console.log("Available Only for Google Chrome most recent versions");
+		console.log("Navigator Share Api Status: "+navigator.share);
+		if(navigator.share){
+			document.querySelectorAll("a.sharing").forEach(el=>{
+				el.addEventListener("click",function(ev){
+					ev.preventDefault();
+					const url= this.href;
+					navigator.share({
+						title: 'Title',
+						text: 'Lorem Ipsum Dolor',
+						url: url,
+
+					})
+					return false;
+				})
+			})
+		}
+	</script>
+</body>
+</html>
