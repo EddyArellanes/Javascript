@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<form v-on:submit.prevent="send">
+				<template v-for="game in videogames">
+					<label v-bind:for="game.value">{{game.name}}</label>
+					<input v-model="gamesSelected" type="checkbox" v-bind:id="game.value" v-bind:value="game.value">
+				</template>
+			<button type="submit">Enviar</button>
+			</form>				
+		</div>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="./Vue.js"></script>
+	</body>
+</html>

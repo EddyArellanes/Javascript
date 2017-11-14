@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+	</head>
+	<body>
+		<div id="app">
+			<form v-on:submit.prevent="send">
+				<label for="digimon1">Digimon World</label>
+				<input v-model="digimonGames" type="checkbox" id="digimon1" value="Digimon World">
+
+				<label for="digimon2">Digimon World 2</label>
+				<input v-model="digimonGames" type="checkbox" id="digimon2" value="Digimon World 2">
+
+				<label for="digimon3">Digimon World 2003</label>
+				<input v-model="digimonGames" type="checkbox" id="digimon3" value="Digimon World 2003">
+
+				<button type="submit">Enviar</button>
+			</form>
+			
+		</div>
+		<script src="https://unpkg.com/vue"></script>
+		<script src="./Vue.js"></script>
+	</body>
+</html>
