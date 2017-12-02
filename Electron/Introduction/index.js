@@ -30,9 +30,7 @@ app.on('ready', ()=>{
 		win.show()
 	})
 
-	//win.loadURL('https://eddyarellanes.github.io')
-	win.loadURL(`file://${__dirname}/src/index.html`)
-	
+	win.loadURL('https://eddyarellanes.github.io')
 
 	win.on('move',()=>{
 		const position= win.getPosition()

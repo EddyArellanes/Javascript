@@ -9,6 +9,7 @@ El Objeto app controla toda la aplicación de Electron, permite controlar los ev
 */
 const {app, BrowserWindow}= require('electron')
 console.dir(app)
+//App events
 app.on('before-quit',()=>{
 	console.log('Saliendo..')
 })
@@ -16,24 +17,13 @@ app.on('ready', ()=>{
 	//BrowserWindow is a Object that optional receive properties like widht, height, etc.
 
 	let win= new BrowserWindow({
-		width:1080,
-		height:720,
+		width:640,
+		height:480,
 		center:true,
 		maximizable:true,
-		title:'Hello Universe :D',
-		//Hide the initial Window
-		show:false
-		
+		title:'Hello Universe :D'
 	})
-	//Will appear till loadURL charges
-	win.once('ready-to-show',()=>{
-		win.show()
-	})
-
-	//win.loadURL('https://eddyarellanes.github.io')
-	win.loadURL(`file://${__dirname}/src/index.html`)
-	
-
+	//Window Events
 	win.on('move',()=>{
 		const position= win.getPosition()
 		console.log(`La posición es ${position}`)
@@ -42,5 +32,4 @@ app.on('ready', ()=>{
 		win= null
 		app.quit()		
 	})
-
 })
