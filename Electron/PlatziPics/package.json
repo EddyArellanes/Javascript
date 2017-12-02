@@ -1,0 +1,16 @@
+{
+  "name": "eddyarellanes",
+  "version": "1.0.0",
+  "description": "App test for learning Electron",
+  "main": "index.js",
+  "dependencies": {
+    "electron": "^1.7.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev" : "electron index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Eddy Arellanes Bastida>",
+  "license": "MIT"
+}
